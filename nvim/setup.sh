@@ -1,3 +1,5 @@
+#!/bin/sh
+
 eval $INSTALL_CMD neovim
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
