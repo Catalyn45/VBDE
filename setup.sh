@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export INSTALL_CMD="pacman -Sy"
+export INSTALL_CMD="sudo pacman -Sy"
 
 eval $INSTALL_CMD curl
 
