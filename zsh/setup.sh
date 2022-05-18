@@ -1,6 +1,8 @@
 #!/bin/bash
 
+export RUN_ZSH=no
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 source ~/.zshrc
 
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
