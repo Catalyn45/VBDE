@@ -8,4 +8,4 @@ eval $INSTALL_CMD zsh
 
 zsh ./zsh/setup.sh
 zsh ./nvim/setup.sh
-
+zsh ./tmux/setup.sh
