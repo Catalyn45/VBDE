@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export RUN_ZSH=no
+export RUNZSH=no
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 source ~/.zshrc
