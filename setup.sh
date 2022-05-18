@@ -1,6 +1,8 @@
 #!/bin/bash
 
-export INSTALL_CMD="sudo apt install -y"
+export FALLBACK_INSTALL_CMD=
+
+source ./get_pkg_manager.sh
 
 eval $INSTALL_CMD curl
 eval $INSTALL_CMD git
