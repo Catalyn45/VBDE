@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
+eval $INSTALL_CMD vim
 eval $INSTALL_CMD neovim
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+old_path=$(pwd)
 mkdir -p ~/.config/nvim/plugged
 
 sh -c 'cd ~/.config/nvim/plugged && \
@@ -19,6 +21,7 @@ git clone https://github.com/tpope/vim-fugitive.git && \
 git clone https://github.com/airblade/vim-gitgutter.git && \
 git clone https://github.com/vim-utils/vim-man.git'
 
-cp ./init.vim ~/.config/nvim/
+cd $old_path
+cp ./nvim/init.vim ~/.config/nvim/
 nvim -c "PlugInstall | qall"
 
