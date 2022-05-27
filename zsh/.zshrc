@@ -115,3 +115,5 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias .=source
 alias ls="exa --icons"
+
+export EDITOR='nvim'
