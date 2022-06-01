@@ -8,12 +8,6 @@ eval $INSTALL_CMD curl
 eval $INSTALL_CMD git
 eval $INSTALL_CMD zsh
 
-if [ "$INSTALL_CMD" = "sudo dnf install -y" ]; then
-    eval $INSTALL_CMD autojump-zsh
-else
-    eval $INSTALL_CMD autojump
-fi
-
 eval $INSTALL_CMD exa
 
 zsh ./zsh/setup.sh
