@@ -9,6 +9,8 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
+Plug 'dense-analysis/ale'
+Plug 'github/copilot.vim'
 call plug#end()
 
 let g:airline_powerline_fonts = 1

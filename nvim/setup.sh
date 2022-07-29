@@ -19,7 +19,9 @@ git clone https://github.com/vim-airline/vim-airline-themes.git && \
 git clone https://github.com/rhysd/vim-clang-format.git && \
 git clone https://github.com/tpope/vim-fugitive.git && \
 git clone https://github.com/airblade/vim-gitgutter.git && \
-git clone https://github.com/vim-utils/vim-man.git'
+git clone https://github.com/vim-utils/vim-man.git && \
+git clone https://github.com/dense-analysis/ale.git && \
+git cline https://github.com/github/copilot.vim.git'
 
 cd $old_path
 cp ./nvim/init.vim ~/.config/nvim/
