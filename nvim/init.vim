@@ -137,6 +137,13 @@ nmap <C-Space><C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-Space><C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 nmap <C-Space><C-Space>a :scs find a <C-R>=expand("<cword>")<CR><CR>
 
+highlight Normal ctermbg=none
+
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 set undodir=~/.undovim
 set undofile
 set fsync
