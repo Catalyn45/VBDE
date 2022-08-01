@@ -7,7 +7,7 @@ source ./get_pkg_manager.sh
 eval $INSTALL_CMD curl
 eval $INSTALL_CMD git
 eval $INSTALL_CMD zsh
-eval $INSTALL_CMD bat
+eval $INSTALL_CMD bat || eval $INSTALL_CMD batcat
 
 eval $INSTALL_CMD exa
 
