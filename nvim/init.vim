@@ -115,6 +115,7 @@ nnoremap S :%s//g<Left><Left>
 set nohlsearch
 set clipboard+=unnamedplus
 set cscopetag
+set nowrap
 
 map g<C-]> :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 map g<C-\> :cs find 0 <C-R>=expand("<cword>")<CR><CR>
