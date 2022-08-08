@@ -15,7 +15,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
@@ -88,6 +87,7 @@ plugins=(
     z
 )
 
+ZLE_RPROMPT_INDENT=0
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -121,7 +121,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias .=source
 
-alias cat="batcat"
+alias cat="bat"
 
 alias ls="exa --icons"
 export EDITOR='nvim'
@@ -129,3 +129,4 @@ alias cdd="take"
 alias zl="z -l"
 alias ze="z -e"
 alias explorer="dolphin . 2> /dev/null &"
+alias t="tmux"

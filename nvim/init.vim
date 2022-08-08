@@ -16,6 +16,8 @@ call plug#end()
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_gruvbox_dark_hard'
 
+set signcolumn=no
+
 if has("cscope")
     set csprg=/bin/cscope
     set csto=0
