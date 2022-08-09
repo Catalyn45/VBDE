@@ -153,6 +153,8 @@ bindsym $mod+Shift+x exec i3lock --image=$HOME/.bgimage/background.png -n
 
 bindsym $mod+p exec playerctl play-pause
 
+bindsym $mod+Tab workspace back_and_forth
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
