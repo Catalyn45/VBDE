@@ -1,0 +1,11 @@
+#!/bin/bash
+file_name="$(xclip -out -selection clipboard 2> /dev/null)"
+
+if [[ "$file_name" != file:///* ]]
+then
+    echo "Not a file in clipboard"
+    exit 1
+fi
+
+file_path="${file_name:7}"
+cp $file_path .
