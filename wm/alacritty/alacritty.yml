@@ -1,3 +1,5 @@
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
 # Colors (Gruvbox Material Dark Medium)
 colors:
   primary:
@@ -46,3 +48,4 @@ window:
   padding:
    x: 5
    y: 5
+
