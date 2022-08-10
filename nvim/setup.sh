@@ -24,6 +24,6 @@ git clone https://github.com/dense-analysis/ale.git && \
 git cline https://github.com/github/copilot.vim.git'
 
 cd $old_path
-cp ./nvim/init.vim ~/.config/nvim/
+ln -s $PWD/nvim/init.vim ~/.config/nvim/
 nvim -c "PlugInstall | qall"
 

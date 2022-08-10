@@ -1,4 +1,4 @@
 #!/bin/bash
 
 eval $INSTALL_CMD tmux
-cp ./tmux/.tmux.conf ~/
+ln -s $PWD/tmux/.tmux.conf ~/
