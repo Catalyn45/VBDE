@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xclip -out -selection clipboard 2> /dev/null
