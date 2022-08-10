@@ -1,4 +1,5 @@
 #!/bin/bash
+eval $INSTALL_CMD xorg
 eval $INSTALL_CMD unzip
 
 mv FiraCode.zip ~/.local/share/fonts/
