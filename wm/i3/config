@@ -204,7 +204,6 @@ gaps outer 7
 smart_gaps on
 hide_edge_borders smart
 
-for_window [class=".*"] title_format "<span font='Tewi 13'> </span>"
 default_border pixel 2
 default_floating_border pixel 2
 
