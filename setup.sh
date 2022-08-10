@@ -20,3 +20,5 @@ zsh ./tmux/setup.sh
 
 # uncomment to install i3wm with configs
 # eval $INSTALL_CMD ./wm/setup.sh
+
+zsh
