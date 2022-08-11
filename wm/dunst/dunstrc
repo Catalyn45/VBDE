@@ -406,11 +406,11 @@
 #    summary = "*script*"
 #    script = dunst_test.sh
 
-[ignore]
-summary = "Rectangular Region Captured"
+#[ignore]
+#summary = "Rectangular Region Captured"
 #    # This notification will not be displayed
 #    summary = "foobar"
-    skip_display = true
+    #skip_display = true
 
 #[history-ignore]
 #    # This notification will not be saved in history

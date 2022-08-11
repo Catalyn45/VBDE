@@ -21,7 +21,9 @@ git clone https://github.com/tpope/vim-fugitive.git && \
 git clone https://github.com/airblade/vim-gitgutter.git && \
 git clone https://github.com/vim-utils/vim-man.git && \
 git clone https://github.com/dense-analysis/ale.git && \
-git cline https://github.com/github/copilot.vim.git'
+git clone https://github.com/github/copilot.vim.git && \
+git clone https://github.com/norcalli/nvim-colorizer.lua.git && \
+git clone https://github.com/windwp/nvim-autopairs.git'
 
 cd $old_path
 ln -s $PWD/nvim/init.vim ~/.config/nvim/

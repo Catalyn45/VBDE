@@ -10,13 +10,28 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'dense-analysis/ale'
-Plug 'github/copilot.vim'
+Plug 'windwp/nvim-autopairs'
+Plug 'norcalli/nvim-colorizer.lua'
+
+" Plug 'github/copilot.vim'
 call plug#end()
+
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
+
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+lua require'colorizer'.setup()
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_gruvbox_dark_hard'
 
-set signcolumn=no
+" set signcolumn=no
+
+let g:ale_linters = {'python': ['flake8']}
 
 if has("cscope")
     set csprg=/bin/cscope
@@ -51,6 +66,8 @@ set ts=4
 set sw=4
 set expandtab
 set list
+set cursorline
+set autoindent
 
 colorscheme gruvbox
 
