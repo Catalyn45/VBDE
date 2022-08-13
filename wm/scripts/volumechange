@@ -1,0 +1,34 @@
+#!/bin/bash
+
+function send_notification() {
+	volume=$(pactl get-sink-volume @DEFAULT_SINK@ | cut -f 2 -d '/' | head -n 1 | tr -d ' ')
+	dunstify -a "changevolume" -u low -r "9993" -h int:value:"$volume" "Volume: ${volume}%" -t 2000
+}
+
+case $1 in
+up)
+	# Set the volume on (if it was muted)
+    pactl set-sink-volume @DEFAULT_SINK@ +10%
+	send_notification
+	;;
+down)
+    pactl set-sink-volume @DEFAULT_SINK@ -10%
+	send_notification
+	;;
+mute)
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+	if [[ "$(pactl get-sink-mute @DEFAULT_SINK@ | cut -f 2 -d ' ')" == "yes" ]]; then
+		dunstify -i volume-mute -a "changevolume" -t 2000 -r 9993 -u low "Muted"
+	else
+        send_notification
+	fi
+	;;
+micmute)
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	if [[ "$(pactl get-source-mute @DEFAULT_SOURCE@ | cut -f 2 -d ' ')" == "yes" ]]; then
+		dunstify -i mic-mute -a "changevolume" -t 2000 -r 9993 -u low "Mic muted"
+	else
+		dunstify -i mic-mute -a "changevolume" -t 2000 -r 9993 -u low "Mic unmuted"
+	fi
+	;;
+esac

@@ -134,7 +134,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias .=source
 
-alias cat="batcat"
+alias cat="bat"
 
 alias ls="exa --icons"
 export EDITOR='nvim'

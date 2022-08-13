@@ -16,5 +16,5 @@ fi
 for file in $files_path
 do
     echo "pasting $file"
-    cp $file .
+    cp -r $file .
 done
