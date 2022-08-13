@@ -9,6 +9,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+set $Lock_cmd i3lock --image=$HOME/.bgimage/background.png -n
+
+exec --no-startup-id $Lock_cmd
+
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -197,6 +201,7 @@ mode "system" {
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym $mod+Shift+e mode "default"
 }
 
 bindsym $mod+r mode "resize"
