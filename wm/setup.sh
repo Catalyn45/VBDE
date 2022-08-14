@@ -8,9 +8,6 @@ unzip FiraCode.zip
 rm FiraCode.zip
 cd -
 
-mkdir -p ~/.config/i3
-ln -s $PWD/i3/config ~/.config/i3/
-
 eval $INSTALL_CMD i3-gaps
 eval $INSTALL_CMD picom
 eval $INSTALL_CMD polybar
@@ -24,6 +21,10 @@ eval $INSTALL_CMD lf
 eval $INSTALL_CMD xclip
 eval $INSTALL_CMD maim
 eval $INSTALL_CMD light
+
+mkdir -p ~/.config/i3
+rm ~/.config/i3/config
+ln -s $PWD/i3/config ~/.config/i3/
 
 mkdir ~/.config/polybar
 rm ~/.config/polybar/config.ini

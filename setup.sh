@@ -12,9 +12,6 @@ eval $INSTALL_CMD bat || eval $INSTALL_CMD batcat
 eval $INSTALL_CMD exa
 
 zsh ./zsh/setup.sh
-
-eval $INSTALL_CMD ranger
-
 zsh ./nvim/setup.sh
 zsh ./tmux/setup.sh
 
