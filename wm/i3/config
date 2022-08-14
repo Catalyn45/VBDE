@@ -231,6 +231,9 @@ hide_edge_borders smart
 default_border pixel 2
 default_floating_border pixel 2
 
+focus_follows_mouse no
+popup_during_fullscreen smart
+
 # class                 border  bground text    indicator child_border
 client.focused          #b29871 #b29871 #FFFFFF #b29871   #b29871
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
