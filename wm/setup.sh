@@ -17,7 +17,6 @@ eval $INSTALL_CMD feh
 eval $INSTALL_CMD alacritty
 eval $INSTALL_CMD dbus
 eval $INSTALL_CMD network-manager-applet
-eval $INSTALL_CMD lf
 eval $INSTALL_CMD xclip
 eval $INSTALL_CMD maim
 eval $INSTALL_CMD light

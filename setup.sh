@@ -10,6 +10,7 @@ eval $INSTALL_CMD zsh
 eval $INSTALL_CMD bat || eval $INSTALL_CMD batcat
 
 eval $INSTALL_CMD exa
+eval $INSTALL_CMD lf
 
 zsh ./zsh/setup.sh
 zsh ./nvim/setup.sh
