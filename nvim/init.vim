@@ -86,14 +86,14 @@ if (has("nvim"))
 	:tnoremap <A-4> <C-\><C-N>:buffer 4<CR>
 	:tnoremap <A-5> <C-\><C-N>:buffer 5<CR>
 	:tnoremap <A-6> <C-\><C-N>:buffer 6<CR>
+    :tnoremap <A-]> <C-\><C-N>:bnext <CR>
+    :tnoremap <A-[> <C-\><C-N>:bprev <CR>
 	:tnoremap <A-7> <C-\><C-N>:buffer 7<CR>
 	:tnoremap <A-8> <C-\><C-N>:buffer 8<CR>
 	:tnoremap <A-9> <C-\><C-N>:buffer 9<CR>
 	:nnoremap <A-t> :term<CR> :startinsert <CR>
-	:tnoremap <A-t> <C-\><C-N>:bd!<CR>
+	:tnoremap <C-o> <C-\><C-N>:bd!<CR>
 	:tnoremap <A-q> <C-\><C-N>:buffer #<CR>
-	:tnoremap <Space><Tab> <C-\><C-N>:buffer #<CR>
-	:tnoremap <Space>bd <C-\><C-N>:quit<CR>
 en
 
 inoremap <A-h> <C-\><C-N><C-w>h
@@ -115,6 +115,12 @@ inoremap <A-u> <C-\><C-N>:vertical resize +5<CR>a
 inoremap <A-i> <C-\><C-N>:res +5<CR>a
 inoremap <A-o> <C-\><C-N>:res -5<CR>a
 inoremap <A-p> <C-\><C-N>:vertical resize -5<CR>a
+
+nnoremap <A-]> :bnext <CR>
+nnoremap <A-[> :bprev <CR>
+
+inoremap <A-]> <C-\><C-N>:bnext <CR>
+inoremap <A-[> <C-\><C-N>:bprev <CR>
 
 inoremap jk <Esc>
 
@@ -138,26 +144,6 @@ set nowrap
 
 map g<C-]> :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 map g<C-\> :cs find 0 <C-R>=expand("<cword>")<CR><CR>
-
-nmap <C-Space>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-Space>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-Space>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space>a :cs find a <C-R>=expand("<cword>")<CR><CR>
-
-nmap <C-Space><C-Space>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-Space><C-Space>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-Space><C-Space>d :scs find d <C-R>=expand("<cword>")<CR><CR>
-nmap <C-Space><C-Space>a :scs find a <C-R>=expand("<cword>")<CR><CR>
 
 highlight Normal ctermbg=none
 
