@@ -92,6 +92,7 @@ if (has("nvim"))
 	:tnoremap <A-8> <C-\><C-N>:buffer 8<CR>
 	:tnoremap <A-9> <C-\><C-N>:buffer 9<CR>
 	:nnoremap <A-t> :term<CR> :startinsert <CR>
+	:inoremap <A-t> <C-\><C-N>:term<CR> :startinsert <CR>
 	:tnoremap <C-o> <C-\><C-N>:bd!<CR>
 	:tnoremap <A-q> <C-\><C-N>:buffer #<CR>
 en
