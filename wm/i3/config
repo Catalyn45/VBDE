@@ -223,7 +223,7 @@ exec --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id dunst
 
 exec_always --no-startup-id picom --experimental-backends -b --config $HOME/.config/picom.conf
-gaps inner 25
+gaps inner 10
 gaps outer 7
 smart_gaps on
 hide_edge_borders smart
