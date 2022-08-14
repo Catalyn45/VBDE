@@ -1,6 +1,12 @@
 env:
   WINIT_X11_SCALE_FACTOR: "1"
 # Colors (Gruvbox Material Dark Medium)
+shell:
+  program: zsh
+  args:
+    - -l
+    - -c
+    - "tmux"
 colors:
   primary:
     background: '0x282828'
