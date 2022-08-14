@@ -148,12 +148,27 @@ fi
 
 alias .=source
 
-alias ls="exa --icons"
-export EDITOR='nvim'
+if which "exa" &> /dev/null
+then
+    alias ls="exa --icons"
+fi
+
+if which "nvim" &> /dev/null
+then
+    export EDITOR='nvim'
+    export VISUAL='nvim'
+fi
+
 alias cdd="take"
 alias zl="z -l"
 alias ze="z -e"
-alias explorer="dolphin . 2> /dev/null &"
-alias t="tmux"
 
-bindkey -s '^o' 'lfcd\n'
+if which "tmux" &> /dev/null
+then
+    alias t="tmux"
+fi
+
+if which "lf" &> /dev/null
+then
+    bindkey -s '^o' 'lfcd\n'
+fi
