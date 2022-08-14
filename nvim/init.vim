@@ -58,7 +58,7 @@ let NERDTreeIgnore = ['\.o$', '\.d$', '\.so', '\.a', 'GTAGS', 'GRTAGS', 'GPATH']
 nnoremap <C-k> :ClangFormat<CR>
 let g:clang_format#detect_style_file = 1
 
-nnoremap <C-f> :cs
+nnoremap <C-f> :cs <CR>
 
 "nnoremap <Tab> <C-w>w
 
