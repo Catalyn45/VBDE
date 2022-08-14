@@ -26,6 +26,9 @@ git clone https://github.com/norcalli/nvim-colorizer.lua.git && \
 git clone https://github.com/windwp/nvim-autopairs.git'
 
 cd $old_path
+
+rm ~/.config/nvim/init.vim
 ln -s $PWD/nvim/init.vim ~/.config/nvim/
+
 nvim -c "PlugInstall | qall"
 
