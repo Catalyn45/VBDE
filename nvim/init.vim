@@ -89,8 +89,8 @@ if (has("nvim"))
 	:tnoremap <A-7> <C-\><C-N>:buffer 7<CR>
 	:tnoremap <A-8> <C-\><C-N>:buffer 8<CR>
 	:tnoremap <A-9> <C-\><C-N>:buffer 9<CR>
-	:nnoremap <A-t> :term<CR> 
-	:tnoremap <C-q> <C-\><C-N>:bd!<CR>
+	:nnoremap <A-t> :term<CR> :startinsert <CR>
+	:tnoremap <A-t> <C-\><C-N>:bd!<CR>
 	:tnoremap <A-q> <C-\><C-N>:buffer #<CR>
 	:tnoremap <Space><Tab> <C-\><C-N>:buffer #<CR>
 	:tnoremap <Space>bd <C-\><C-N>:quit<CR>
