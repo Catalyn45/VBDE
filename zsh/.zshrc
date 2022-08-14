@@ -38,7 +38,6 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
-bindkey -s '^o' 'lfcd\n'
 
 function set_terminal_title() {
   echo -en "\e]2;$@\a"
@@ -139,9 +138,15 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias .=source
+if which "batcat" &> /dev/null
+then
+    alias cat="batcat"
+elif which "bat" &> /dev/null
+then
+    alias cat="bat"
+fi
 
-alias cat="bat"
+alias .=source
 
 alias ls="exa --icons"
 export EDITOR='nvim'
@@ -150,3 +155,5 @@ alias zl="z -l"
 alias ze="z -e"
 alias explorer="dolphin . 2> /dev/null &"
 alias t="tmux"
+
+bindkey -s '^o' 'lfcd\n'
