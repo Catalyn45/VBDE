@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function send_notification() {
+	volume=$(light -G)
+	dunstify -a "changebrightness" -u low -r "9995" -h int:value:"$volume" "Brightness: ${volume}%" -t 2000
+}
+
+case $1 in
+up)
+	# Set the volume on (if it was muted)
+    light -A 10%
+	send_notification
+	;;
+down)
+    light -U 10%
+	send_notification
+	;;
+esac

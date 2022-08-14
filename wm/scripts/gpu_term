@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nvidia-settings -q GpuCoreTemp | cut -f 6 -d ' ' | head -2 | tail -1 | tr -d '.'
