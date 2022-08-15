@@ -20,6 +20,7 @@ eval $INSTALL_CMD network-manager-applet
 eval $INSTALL_CMD xclip
 eval $INSTALL_CMD maim
 eval $INSTALL_CMD light
+eval $INSTALL_CMD touchegg
 
 mkdir -p ~/.config/i3
 rm ~/.config/i3/config
@@ -38,6 +39,10 @@ ln -s $PWD/picom/picom.conf ~/.config/
 mkdir ~/.config/rofi
 rm ~/.config/rofi/config.rasi
 ln -s $PWD/rofi/config.rasi ~/.config/rofi/
+
+mkdir ~/.config/touchegg
+rm ~/.config/touchegg/touchegg.conf
+ln -s $PWD/touchegg/touchegg.conf ~/.config/touchegg/
 
 mkdir ~/.config/dunst
 rm ~/.config/dunst/dunstrc
