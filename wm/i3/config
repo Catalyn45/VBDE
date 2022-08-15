@@ -36,6 +36,8 @@ set $Lock_cmd i3lock --image=$HOME/.bgimage/background.png -n
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $Lock_cmd
 
+exec --no-startup-id touchegg --client
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec_always --no-startup-id nm-applet
