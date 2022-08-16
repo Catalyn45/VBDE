@@ -151,6 +151,7 @@ alias .=source
 if which "exa" &> /dev/null
 then
     alias ls="exa --icons"
+    alias la="exa -lahg"
 fi
 
 if which "nvim" &> /dev/null
