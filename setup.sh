@@ -12,11 +12,17 @@ eval $INSTALL_CMD bat || eval $INSTALL_CMD batcat
 eval $INSTALL_CMD exa
 eval $INSTALL_CMD lf
 
-zsh ./zsh/setup.sh
-zsh ./nvim/setup.sh
-zsh ./tmux/setup.sh
+cd zsh
+zsh ./setup.sh
+
+cd ../nvim
+zsh ./setup.sh
+
+cd ../tmux
+zsh ./setup.sh
 
 # uncomment to install i3wm with configs
-# eval $INSTALL_CMD ./wm/setup.sh
+#cd ../wm
+#eval $INSTALL_CMD ./setup.sh
 
 zsh

@@ -1,14 +1,18 @@
 #!/bin/bash
 eval $INSTALL_CMD xorg
 eval $INSTALL_CMD unzip
+eval $INSTALL_CMD wget
 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
+
+mkdir -p ~/.local/share/fonts
 mv FiraCode.zip ~/.local/share/fonts/
 cd ~/.local/share/fonts/
 unzip FiraCode.zip
 rm FiraCode.zip
 cd -
 
-eval $INSTALL_CMD i3-gaps
+eval $INSTALL_CMD i3-gaps i3lock
 eval $INSTALL_CMD picom
 eval $INSTALL_CMD polybar
 eval $INSTALL_CMD rofi

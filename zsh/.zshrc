@@ -23,8 +23,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
- eval "$(dircolors ~/.dircolors)";
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 # Use lf to switch directories and bind it to ctrl-o
