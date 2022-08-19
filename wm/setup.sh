@@ -59,7 +59,7 @@ ln -s $PWD/alacritty/alacritty.yml ~/.config/alacritty/
 rm -rf ~/scripts
 ln -s $PWD/scripts ~/
 
-rm rf ~/.bgimage
+rm -rf ~/.bgimage
 ln -s $PWD/.bgimage ~/
 
 feh --bg-scale ~/.bgimage/background.png
