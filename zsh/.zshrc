@@ -171,3 +171,8 @@ if which "lf" &> /dev/null
 then
     bindkey -s '^o' 'lfcd\n'
 fi
+
+
+alias -s jpg=feh
+alias -s png=feh
+alias -s pdf=mupdf
