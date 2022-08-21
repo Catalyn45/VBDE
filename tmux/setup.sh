@@ -2,6 +2,5 @@
 
 eval $INSTALL_CMD tmux
 
-[[ -f ~/.tmux.conf ]] && cp ~/.tmux.conf ~/.tmux.conf.bak
-rm ~/.tmux.conf
+mv ~/.tmux.conf ~/.tmux.conf.bak
 ln -s $PWD/.tmux.conf ~/
