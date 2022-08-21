@@ -27,6 +27,7 @@ git clone https://github.com/windwp/nvim-autopairs.git'
 
 cd $old_path
 
+[[ -f ~/.config/nvim/init.vim ]] && cp ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak
 rm ~/.config/nvim/init.vim
 ln -s $PWD/init.vim ~/.config/nvim/
 
