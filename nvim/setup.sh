@@ -27,7 +27,7 @@ git clone https://github.com/windwp/nvim-autopairs.git'
 
 cd $old_path
 
-rm ~/.config/nvim/init.vim
+mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak
 ln -s $PWD/init.vim ~/.config/nvim/
 
 nvim -c "PlugInstall | qall"

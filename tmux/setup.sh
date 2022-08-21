@@ -2,5 +2,5 @@
 
 eval $INSTALL_CMD tmux
 
-rm ~/.tmux.conf
+mv ~/.tmux.conf ~/.tmux.conf.bak
 ln -s $PWD/.tmux.conf ~/

@@ -27,39 +27,39 @@ eval $INSTALL_CMD light
 eval $INSTALL_CMD touchegg
 
 mkdir -p ~/.config/i3
-rm ~/.config/i3/config
+mv ~/.config/i3/config ~/.config/i3/config.bak
 ln -s $PWD/i3/config ~/.config/i3/
 
 mkdir ~/.config/polybar
-rm ~/.config/polybar/config.ini
+mv ~/.config/polybar/config.ini ~/.config/polybar/config.ini.bak
 ln -s $PWD/polybar/config.ini ~/.config/polybar/
 
-rm ~/.config/polybar/launch.sh
+mv ~/.config/polybar/launch.sh ~/.config/polybar/launch.sh.bak
 ln -s $PWD/polybar/launch.sh ~/.config/polybar/
 
-rm ~/.config/picom.conf
+mv ~/.config/picom.conf ~/.config/picom.conf.bak
 ln -s $PWD/picom/picom.conf ~/.config/
 
 mkdir ~/.config/rofi
-rm ~/.config/rofi/config.rasi
+mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
 ln -s $PWD/rofi/config.rasi ~/.config/rofi/
 
 mkdir ~/.config/touchegg
-rm ~/.config/touchegg/touchegg.conf
+mv ~/.config/touchegg/touchegg.conf ~/.config/touchegg/touchegg.conf.bak
 ln -s $PWD/touchegg/touchegg.conf ~/.config/touchegg/
 
 mkdir ~/.config/dunst
-rm ~/.config/dunst/dunstrc
+mv ~/.config/dunst/dunstrc ~/.config/dunst/dunstrc.bak
 ln -s $PWD/dunst/dunstrc ~/.config/dunst/
 
 mkdir ~/.config/alacritty
-rm ~/.config/alacritty/alacritty.yml
+mv ~/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml.bak
 ln -s $PWD/alacritty/alacritty.yml ~/.config/alacritty/
 
-rm -rf ~/scripts
+mv ~/scripts ~/scripts.bak
 ln -s $PWD/scripts ~/
 
-rm -rf ~/.bgimage
+mv ~/.bgimage ~/.bgimage.bak
 ln -s $PWD/.bgimage ~/
 
 feh --bg-scale ~/.bgimage/background.png
