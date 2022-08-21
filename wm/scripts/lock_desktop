@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $(xrandr | grep " connected " | wc -l) == "1" ]
+then
+    BACKGROUND_CMD='--image=$HOME/.bgimage/background.png'
+else
+    BACKGROUND_CMD='--color=000000'
+fi
+
+i3lock $BACKGROUND_CMD -n
+
+

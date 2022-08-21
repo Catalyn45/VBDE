@@ -176,3 +176,4 @@ fi
 alias -s jpg=feh
 alias -s png=feh
 alias -s pdf=mupdf
+alias -s txt=nvim

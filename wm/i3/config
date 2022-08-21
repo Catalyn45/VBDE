@@ -9,7 +9,10 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $Lock_cmd i3lock --image=$HOME/.bgimage/background.png -n
+set $Lock_cmd lock_desktop
+
+exec --no-startup-id $HOME/.screenlayout/screen.sh
+exec --no-startup-id $HOME/.fehbg
 
 exec --no-startup-id $Lock_cmd
 
@@ -29,8 +32,6 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
-
-set $Lock_cmd i3lock --image=$HOME/.bgimage/background.png -n
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
@@ -145,6 +146,35 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym $mod+mod2+KP_1 workspace number $ws1
+bindsym $mod+mod2+KP_2 workspace number $ws2
+bindsym $mod+mod2+KP_3 workspace number $ws3
+bindsym $mod+mod2+KP_4 workspace number $ws4
+bindsym $mod+mod2+KP_5 workspace number $ws5
+bindsym $mod+mod2+KP_6 workspace number $ws6
+bindsym $mod+mod2+KP_7 workspace number $ws7
+bindsym $mod+mod2+KP_8 workspace number $ws8
+bindsym $mod+mod2+KP_9 workspace number $ws9
+
+# workspaces asigned to moniors
+
+set $mon_left  "DP-1-0"
+set $mon_prim  "eDP"
+set $mon_right "HDMI-1-0"
+
+workspace $ws1 output $mon_left
+workspace $ws2 output $mon_prim
+workspace $ws3 output $mon_right
+
+workspace $ws4 output $mon_left
+workspace $ws5 output $mon_prim
+workspace $ws6 output $mon_right
+
+workspace $ws7 output $mon_left
+workspace $ws8 output $mon_prim
+workspace $ws9 output $mon_right
+
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -156,6 +186,16 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym $mod+Shift+mod2+KP_End move container to workspace $ws1
+bindsym $mod+Shift+mod2+KP_Down move container to workspace $ws2
+bindsym $mod+Shift+mod2+KP_Next move container to workspace $ws3
+bindsym $mod+Shift+mod2+KP_Left move container to workspace $ws4
+bindsym $mod+Shift+mod2+KP_Begin move container to workspace $ws5
+bindsym $mod+Shift+mod2+KP_Right move container to workspace $ws6
+bindsym $mod+Shift+mod2+KP_Home move container to workspace $ws7
+bindsym $mod+Shift+mod2+KP_Up move container to workspace $ws8
+bindsym $mod+Shift+mod2+KP_Prior move container to workspace $ws9
 
 bindsym Mod4+Shift+s exec $HOME/scripts/screenshot.sh
 bindsym Mod4+l exec $Lock_cmd
@@ -211,6 +251,8 @@ mode "system" {
 bindsym $mod+r mode "resize"
 bindsym $mod+Shift+e mode "system"
 
+for_window [class="feh"] floating enable
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 # bar {
@@ -221,7 +263,6 @@ bindsym $mod+Shift+e mode "system"
 # }
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-exec --no-startup-id $HOME/.fehbg
 exec_always --no-startup-id dunst
 
 exec_always --no-startup-id picom --experimental-backends -b --config $HOME/.config/picom.conf
