@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/scripts:$PATH:~/.local/bin
 
@@ -26,16 +27,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 # Use lf to switch directories and bind it to ctrl-o
-
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
-}
 
 function set_terminal_title() {
   echo -en "\e]2;$@\a"
@@ -108,6 +99,13 @@ ZLE_RPROMPT_INDENT=0
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+bindkey -v
+
+bindkey '^n' autosuggest-accept
+bindkey '^k' up-line-or-search
+bindkey '^j' down-line-or-search
+
+bindkey '^m' accept-line
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -167,9 +165,12 @@ then
     alias t="tmux"
 fi
 
-if which "lf" &> /dev/null
+
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+if which "ranger" &> /dev/null
 then
-    bindkey -s '^o' 'lfcd\n'
+    bindkey -s '^o' 'ranger^m'
 fi
 
 

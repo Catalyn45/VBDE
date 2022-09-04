@@ -152,6 +152,7 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+noremap <C-m> <C-R><C-N>
 
 set undodir=~/.undovim
 set undofile
