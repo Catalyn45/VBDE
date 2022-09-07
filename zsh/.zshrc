@@ -173,6 +173,7 @@ then
     bindkey -s '^o' 'ranger^m'
 fi
 
+unsetopt share_history
 
 alias -s jpg=feh
 alias -s png=feh
