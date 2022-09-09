@@ -159,6 +159,7 @@ fi
 alias cdd="take"
 alias zl="z -l"
 alias ze="z -e"
+alias cal="ncal -b -M"
 
 if which "tmux" &> /dev/null
 then
