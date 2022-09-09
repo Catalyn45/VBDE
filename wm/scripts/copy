@@ -1,15 +1,14 @@
-#!/usr/bin/env python3
-import os.path
-import sys
-from urllib.parse import quote
-from subprocess import run
+#!/bin/bash
 
-if len(sys.argv) < 2:
-    print("usage: copy file1 [file2 filen]")
-    exit(1)
+if [[ $# -lt 1 ]]; then
+    echo "usage: $(basename $0) file1 [file2 filen]"
+    exit 1
+fi
 
-out = [os.fsencode('file://' + quote(os.path.abspath(x))) for x in sys.argv[1:]]
-run(['xclip', '-i', '-selection', 'clipboard', '-t', 'text/uri-list'],
-    input=b'\n'.join(out), check=True)
+files_paths=""
+for file_name in $@; do
+    file_path="file://$(realpath $file_name)"
+    files_paths="$files_paths$file_path\n"
+done
 
-
+echo -e $files_paths | xclip -i -selection clipboard -t text/uri-list
