@@ -13,7 +13,6 @@ set $Lock_cmd lock_desktop
 
 exec --no-startup-id $HOME/.screenlayout/screen.sh
 exec --no-startup-id $HOME/.fehbg
-exec --no-startup-id $HOME/scripts/nightlight
 exec --no-startup-id $Lock_cmd
 
 set $mod Mod1
