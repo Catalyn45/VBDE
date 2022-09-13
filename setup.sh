@@ -1,28 +1,32 @@
 #!/bin/bash
 
+source utils.sh
+
+# in case your distro is not supported, write the install command
+# here. ex: export FALLBACK_INSTALL_CMD="sudo apt install -y"
 export FALLBACK_INSTALL_CMD=
 
-source ./get_pkg_manager.sh
+get_package_manager
 
-eval $INSTALL_CMD curl
-eval $INSTALL_CMD git
-eval $INSTALL_CMD zsh
-eval $INSTALL_CMD bat || eval $INSTALL_CMD batcat
+# like cat but pretty
+install bat || install batcat
 
-eval $INSTALL_CMD exa
-eval $INSTALL_CMD lf
+# like ls but pretty
+install exa
 
-cd zsh
-zsh ./setup.sh
+# very nice shell
+setup zsh
 
-cd ../nvim
-zsh ./setup.sh
+# super cool terminal editor
+setup nvim
 
-cd ../tmux
-zsh ./setup.sh
+# multiple shells one terminal
+setup tmux
+
+# terminal file manager
+setup ranger
 
 # uncomment to install i3wm with configs
-#cd ../wm
-#eval $INSTALL_CMD ./setup.sh
+# setup wm
 
 zsh

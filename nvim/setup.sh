@@ -1,12 +1,16 @@
 #!/bin/bash
 
-eval $INSTALL_CMD vim
-eval $INSTALL_CMD neovim
+source ../utils.sh
+
+install vim
+install neovim
+
+install curl
+install git
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 	       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-old_path=$(pwd)
 mkdir -p ~/.config/nvim/plugged
 
 sh -c 'cd ~/.config/nvim/plugged && \
@@ -25,10 +29,7 @@ git clone https://github.com/github/copilot.vim.git && \
 git clone https://github.com/norcalli/nvim-colorizer.lua.git && \
 git clone https://github.com/windwp/nvim-autopairs.git'
 
-cd $old_path
-
-mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim.bak
-ln -s $PWD/init.vim ~/.config/nvim/
+replace_config ~/.config init.vim
 
 nvim -c "PlugInstall | qall"
 

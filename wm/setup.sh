@@ -1,8 +1,13 @@
 #!/bin/bash
-eval $INSTALL_CMD xorg
-eval $INSTALL_CMD unzip
-eval $INSTALL_CMD wget
 
+source ../utils.sh
+
+install xorg
+
+install unzip
+install wget
+
+# install fira code nerd fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 
 mkdir -p ~/.local/share/fonts
@@ -12,55 +17,42 @@ unzip FiraCode.zip
 rm FiraCode.zip
 cd -
 
-eval $INSTALL_CMD i3-gaps i3lock
-eval $INSTALL_CMD picom
-eval $INSTALL_CMD polybar
-eval $INSTALL_CMD rofi
-eval $INSTALL_CMD dunst
-eval $INSTALL_CMD feh
-eval $INSTALL_CMD alacritty
-eval $INSTALL_CMD dbus
-eval $INSTALL_CMD network-manager-applet
-eval $INSTALL_CMD xclip
-eval $INSTALL_CMD maim
-eval $INSTALL_CMD light
-eval $INSTALL_CMD touchegg
+install dbus
+install network-manager-applet
 
-mkdir -p ~/.config/i3
-mv ~/.config/i3/config ~/.config/i3/config.bak
-ln -s $PWD/i3/config ~/.config/i3/
+# clipboard
+install xclip
 
-mkdir ~/.config/polybar
-mv ~/.config/polybar/config.ini ~/.config/polybar/config.ini.bak
-ln -s $PWD/polybar/config.ini ~/.config/polybar/
+# screenshots
+install maim
 
-mv ~/.config/polybar/launch.sh ~/.config/polybar/launch.sh.bak
-ln -s $PWD/polybar/launch.sh ~/.config/polybar/
+# brightness change
+install light
 
-mv ~/.config/picom.conf ~/.config/picom.conf.bak
-ln -s $PWD/picom/picom.conf ~/.config/
+# window manager
+setup i3
 
-mkdir ~/.config/rofi
-mv ~/.config/rofi/config.rasi ~/.config/rofi/config.rasi.bak
-ln -s $PWD/rofi/config.rasi ~/.config/rofi/
+# top bar
+setup polybar
 
-mkdir ~/.config/touchegg
-mv ~/.config/touchegg/touchegg.conf ~/.config/touchegg/touchegg.conf.bak
-ln -s $PWD/touchegg/touchegg.conf ~/.config/touchegg/
+# composer (for rounded corners, transparency etc)
+setup picom
 
-mkdir ~/.config/dunst
-mv ~/.config/dunst/dunstrc ~/.config/dunst/dunstrc.bak
-ln -s $PWD/dunst/dunstrc ~/.config/dunst/
+# applications starter
+setup rofi
 
-mkdir ~/.config/alacritty
-mv ~/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml.bak
-ln -s $PWD/alacritty/alacritty.yml ~/.config/alacritty/
+# touchpad gestures
+setup touchegg
 
-mv ~/scripts ~/scripts.bak
-ln -s $PWD/scripts ~/
+# notifications
+setup dunst
 
-mv ~/.bgimage ~/.bgimage.bak
-ln -s $PWD/.bgimage ~/
+# cute terminal emulator
+setup alacritty
 
-feh --bg-scale ~/.bgimage/background.png
+# image viewer and background setter
+install feh
+replace_config ~ .bgimage
 
+# util scripts
+replace_config ~ scripts

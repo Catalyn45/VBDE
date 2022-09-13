@@ -1,6 +1,7 @@
 #!/bin/bash
 
-eval $INSTALL_CMD tmux
+source ../utils.sh
 
-mv ~/.tmux.conf ~/.tmux.conf.bak
-ln -s $PWD/.tmux.conf ~/
+install tmux
+
+replace_config ~ .tmux.conf
