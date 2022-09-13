@@ -1,24 +1,29 @@
 #!/bin/bash
 
-if [[ $# -lt 1 ]]; then
-    INPUT=""
-    while read line; do
-        INPUT="$INPUT$line\n"
+# user provided args so we copy the files from args
+if [[ $# -ge 1 ]]; then
+    files_paths=""
+    for file_name in $@; do
+        file_path="file://$(realpath $file_name)"
+        files_paths="$files_paths$file_path\n"
     done
 
-    if [[ -z $INPUT ]]; then
-        echo "usage: $(basename $0) file1 [file2 filen]"
-        exit 1
-    fi
+    echo -e $files_paths | xclip -i -selection clipboard -t text/uri-list
+    exit 0
+fi
 
+# user did no provide args so we read from the
+# input and copy as a string
+INPUT=""
+while read line; do
+    INPUT="$INPUT$line\n"
+done
+
+if [[ ! -z $INPUT ]]; then
     echo -e $INPUT | xclip -i -selection clipboard
     exit 0
 fi
 
-files_paths=""
-for file_name in $@; do
-    file_path="file://$(realpath $file_name)"
-    files_paths="$files_paths$file_path\n"
-done
+echo "usage: $(basename $0) file1 [file2 filen]"
+exit 1
 
-echo -e $files_paths | xclip -i -selection clipboard -t text/uri-list
