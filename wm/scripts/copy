@@ -1,8 +1,18 @@
 #!/bin/bash
 
 if [[ $# -lt 1 ]]; then
-    echo "usage: $(basename $0) file1 [file2 filen]"
-    exit 1
+    INPUT=""
+    while read line; do
+        INPUT="$INPUT$line\n"
+    done
+
+    if [[ -z $INPUT ]]; then
+        echo "usage: $(basename $0) file1 [file2 filen]"
+        exit 1
+    fi
+
+    echo -e $INPUT | xclip -i -selection clipboard
+    exit 0
 fi
 
 files_paths=""
