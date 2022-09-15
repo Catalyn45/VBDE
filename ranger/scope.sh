@@ -302,6 +302,8 @@ handle_mime() {
                 --force -- "${FILE_PATH}" && exit 5
             env COLORTERM=8bit bat --color=always \
                 -- "${FILE_PATH}" && exit 5
+            env COLORTERM=8bit batcat --color=always \
+                -- "${FILE_PATH}" && exit 5
             pygmentize -f "${pygmentize_format}" -O "style=${PYGMENTIZE_STYLE}"\
                 -- "${FILE_PATH}" && exit 5
             exit 2;;
@@ -331,7 +333,7 @@ handle_mime() {
 handle_fallback() {
     if file "${FILE_PATH}" | grep -ohE "ELF (64|32)-bit" &> /dev/null ; then
         file --dereference --brief -- "${FILE_PATH}"
-        timeout 1 objdump -d "${FILE_PATH}" | env COLORTERM=8bit bat --color=always && exit 5
+        timeout 1 objdump -d "${FILE_PATH}" | env COLORTERM=8bit batcat --color=always && exit 5
     fi
 
     echo '----- File Type Classification -----' && file --dereference --brief -- "${FILE_PATH}" && exit 5
