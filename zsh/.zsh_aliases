@@ -1,0 +1,58 @@
+# util functions for aliasing
+# -------------------------------------------------------
+
+alias_executable() {
+    if ! which "$2" &> /dev/null; then
+        return 1
+    fi
+    alias "$1"="$2"
+
+    return 0
+}
+
+alias_command() {
+    if ! which "$1" &> /dev/null; then
+        return 1
+    fi
+
+    shift
+
+    while [[ $# -ge 2 ]]; do
+        alias "$1"="$2"
+        shift 2
+    done
+
+    return 0
+}
+
+# commands aliases
+# -------------------------------------------------------
+if ! alias_executable "cat" "batcat"; then
+    alias_executable "cat" "bat"
+fi
+
+alias_executable "." "source"
+
+alias_command "exa" \
+    "ls" "exa --icons" \
+    "la" "exa --icons -lahg" \
+    "lls" "/bin/ls"
+
+alias_executable "cdd" "take"
+
+alias_command "z" "zl" "z -l"
+alias_command "z" "ze" "z -e"
+
+alias_command "ncal" "cal" "ncal -b -M"
+
+alias_executable "t" "tmux"
+
+alias_command "ranger" "ranger" 'ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# opening by extension aliases
+# ------------------------------------------------------------
+
+alias -s jpg=feh
+alias -s png=feh
+alias -s pdf=mupdf
+alias -s txt=nvim

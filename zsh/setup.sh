@@ -11,6 +11,8 @@ export RUNZSH=no
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 replace_config ~ .zshrc
+replace_config ~ .zsh_aliases
+replace_config ~ .zsh_binds
 replace_config ~ .p10k.zsh
 
 source ~/.zshrc

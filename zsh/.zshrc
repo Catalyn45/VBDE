@@ -99,13 +99,9 @@ ZLE_RPROMPT_INDENT=0
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-bindkey -v
-
-bindkey '^n' autosuggest-accept
-bindkey '^k' up-line-or-search
-bindkey '^j' down-line-or-search
-
-bindkey '^m' accept-line
+#
+# bindings
+source ~/.zsh_binds
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -119,6 +115,11 @@ bindkey '^m' accept-line
 #   export EDITOR='mvim'
 # fi
 
+if which "nvim" &> /dev/null; then
+    export EDITOR='nvim'
+    export VISUAL='nvim'
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -131,52 +132,11 @@ bindkey '^m' accept-line
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+source ~/.zsh_aliases
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if which "batcat" &> /dev/null
-then
-    alias cat="batcat"
-elif which "bat" &> /dev/null
-then
-    alias cat="bat"
-fi
-
-alias .=source
-
-if which "exa" &> /dev/null
-then
-    alias ls="exa --icons"
-    alias la="exa -lahg"
-fi
-
-if which "nvim" &> /dev/null
-then
-    export EDITOR='nvim'
-    export VISUAL='nvim'
-fi
-
-alias cdd="take"
-alias zl="z -l"
-alias ze="z -e"
-alias cal="ncal -b -M"
-
-if which "tmux" &> /dev/null
-then
-    alias t="tmux"
-fi
-
-
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-if which "ranger" &> /dev/null
-then
-    bindkey -s '^o' 'ranger^m'
-fi
-
+# other options
+#
 unsetopt share_history
-
-alias -s jpg=feh
-alias -s png=feh
-alias -s pdf=mupdf
-alias -s txt=nvim

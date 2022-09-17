@@ -1,0 +1,14 @@
+# vim mode
+bindkey -v
+
+# binds
+#
+bindkey '^n' autosuggest-accept
+bindkey '^k' up-line-or-search
+bindkey '^j' down-line-or-search
+
+bindkey '^m' accept-line
+
+if which "ranger" &> /dev/null; then
+    bindkey -s '^o' 'ranger^m'
+fi
