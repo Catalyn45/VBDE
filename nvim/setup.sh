@@ -29,7 +29,7 @@ git clone https://github.com/github/copilot.vim.git && \
 git clone https://github.com/norcalli/nvim-colorizer.lua.git && \
 git clone https://github.com/windwp/nvim-autopairs.git'
 
-replace_config ~/.config init.vim
+replace_config ~/.config/nvim init.vim
 
 nvim -c "PlugInstall | qall"
 
