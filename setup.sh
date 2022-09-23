@@ -26,7 +26,22 @@ setup tmux
 # terminal file manager
 setup ranger
 
-# uncomment to install i3wm with configs
-# setup wm
+# install i3wm and other things
+if [[ $1 == "-y" ]]; then
+    setup wm
+else
+    while true; do
+        read -p "Do you want to install graphics (xorg) configs also? (Y/n): " option
+
+        if [[ $option == "y" || $option == "Y" ]]; then
+            setup wm
+            break
+        fi
+
+        if [[ $option == "n" || $option == "N" ]]; then
+            break
+        fi
+    done
+fi
 
 zsh
