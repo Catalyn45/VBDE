@@ -140,3 +140,8 @@ source ~/.zsh_aliases
 # other options
 #
 unsetopt share_history
+
+# custom options
+if [[ -r ~/.zsh_custom ]]; then
+    source ~/.zsh_custom
+fi
