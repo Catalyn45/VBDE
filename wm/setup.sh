@@ -2,7 +2,8 @@
 
 source ../utils.sh
 
-install xorg
+install xorg || install xorg-x11-server-Xorg
+install xorg-xinit || install xorg-x11-xinit
 
 install unzip
 install wget
@@ -56,3 +57,5 @@ replace_config ~ .bgimage
 
 # util scripts
 replace_config ~ scripts
+
+replace_config ~ .xinitrc
