@@ -31,5 +31,5 @@ git clone https://github.com/windwp/nvim-autopairs.git'
 
 replace_config ~/.config/nvim init.vim
 
-nvim -c "PlugInstall | qall"
+nvim -c "PlugInstall | qall" 2> /dev/null
 

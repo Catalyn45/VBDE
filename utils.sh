@@ -6,7 +6,7 @@ install () {
 replace_config () {
     mkdir -p "$1"
     mv "$1/$2" "$1/$2.bak"
-    mv "./$2" "$1/"
+    ln -s "$PWD/$2" "$1/"
     return 0
 }
 
