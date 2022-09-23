@@ -15,10 +15,11 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 " Plug 'github/copilot.vim'
 call plug#end()
-
+if has_key(plugs, 'nvim-autopairs')
 lua << EOF
 require("nvim-autopairs").setup {}
 EOF
+endif
 
 if (has("termguicolors"))
     set termguicolors
