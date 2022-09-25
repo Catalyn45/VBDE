@@ -24,7 +24,7 @@ get_package_manager () {
     elif command -v yum &> /dev/null; then
         export INSTALL_CMD="sudo yum install -y"
     elif command -v pacman &> /dev/null; then
-        export INSTALL_CMD="sudo pacman -Sy"
+        export INSTALL_CMD="yes | sudo pacman -Sy"
     elif command -v apk &> /dev/null; then
         export INSTALL_CMD="sudo apk add"
     else
