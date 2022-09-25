@@ -7,9 +7,9 @@ shortcuts so you can move blazingly fast!!
 
 # Notes
 
-The installer is known to work on Fedora and it will probably fail
-on other distributions because of the package name differences. I will
-add support for other distros in the future.
+The installer is known to work on Fedora and Arch. It will probably fail
+on other distributions because of the package names differences, so if you are
+using Debian/Ubuntu you kinda need to figure it out yourself.
 
 # Usage
 
