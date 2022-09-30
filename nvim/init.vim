@@ -12,6 +12,7 @@ Plug 'vim-utils/vim-man'
 Plug 'dense-analysis/ale'
 Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Plug 'github/copilot.vim'
 call plug#end()
@@ -22,6 +23,9 @@ if req_status then
     p.setup {}
 end
 EOF
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_working_path_mode = ''
 
 if (has("termguicolors"))
     set termguicolors
@@ -35,6 +39,19 @@ let g:airline_theme='base16_gruvbox_dark_hard'
 " set signcolumn=no
 
 let g:ale_linters = {'python': ['flake8']}
+
+let extension = expand('%:e')
+
+function! SwitchSourceHeader()
+  "update!
+  if (expand ("%:e") == "cpp")
+    find %:t:r.h
+  else
+    find %:t:r.cpp
+  endif
+endfunction
+
+nmap <A-o> :call SwitchSourceHeader()<CR>
 
 if has("cscope")
     set csprg=/bin/cscope
@@ -81,8 +98,6 @@ if (has("nvim"))
 	:tnoremap <A-l> <C-\><C-N><C-w>l
 	:tnoremap <A-u> <C-\><C-N>:vertical resize +5<CR>
 	:tnoremap <A-i> <C-\><C-N>:res +5<CR>
-	:tnoremap <A-o> <C-\><C-N>:res -5<CR>
-	:tnoremap <A-p> <C-\><C-N>:vertical resize -5<CR>
 	:tnoremap <A-1> <C-\><C-N>:buffer 1<CR>
 	:tnoremap <A-2> <C-\><C-N>:buffer 2<CR>
 	:tnoremap <A-3> <C-\><C-N>:buffer 3<CR>
@@ -112,12 +127,8 @@ nnoremap <A-l> <C-w>l
 
 nnoremap <A-u> :vertical resize +5<CR>
 nnoremap <A-i> :res +5<CR>
-nnoremap <A-o> :res -5<CR>
-nnoremap <A-p> :vertical resize -5<CR>
 
 inoremap <A-u> <C-\><C-N>:vertical resize +5<CR>a
-inoremap <A-i> <C-\><C-N>:res +5<CR>a
-inoremap <A-o> <C-\><C-N>:res -5<CR>a
 inoremap <A-p> <C-\><C-N>:vertical resize -5<CR>a
 
 nnoremap <A-]> :bnext <CR>
