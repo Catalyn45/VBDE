@@ -12,17 +12,19 @@ Plug 'vim-utils/vim-man'
 Plug 'dense-analysis/ale'
 Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Plug 'github/copilot.vim'
 call plug#end()
-lua << EOF
 
+source ~/.config/nvim/plugged/switcher/a.vim
+
+lua << EOF
 local req_status, p = pcall(require, "nvim-autopairs")
 if req_status then
     p.setup {}
 end
 EOF
+
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 let g:ctrlp_working_path_mode = ''
@@ -42,16 +44,7 @@ let g:ale_linters = {'python': ['flake8']}
 
 let extension = expand('%:e')
 
-function! SwitchSourceHeader()
-  "update!
-  if (expand ("%:e") == "cpp")
-    find %:t:r.h
-  else
-    find %:t:r.cpp
-  endif
-endfunction
-
-nmap <A-o> :call SwitchSourceHeader()<CR>
+nmap <A-o> :A<CR>
 
 if has("cscope")
     set csprg=/bin/cscope
