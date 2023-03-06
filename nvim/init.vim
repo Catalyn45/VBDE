@@ -26,7 +26,7 @@ end
 EOF
 
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|tags\|DS_Store\|git\|\.o\|\.d'
 let g:ctrlp_working_path_mode = ''
 
 if (has("termguicolors"))
@@ -123,6 +123,8 @@ nnoremap <A-i> :res +5<CR>
 
 inoremap <A-u> <C-\><C-N>:vertical resize +5<CR>a
 inoremap <A-p> <C-\><C-N>:vertical resize -5<CR>a
+
+nnoremap <C-.> <C-w><right> <CR>
 
 nnoremap <A-]> :bnext <CR>
 nnoremap <A-[> :bprev <CR>
