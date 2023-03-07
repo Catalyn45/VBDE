@@ -7,7 +7,7 @@ fi
 
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/scripts:$PATH:~/.local/bin
+export PATH=$HOME/go/bin:$HOME/bin:/usr/local/bin:$HOME/scripts:$PATH:~/.local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -139,7 +139,6 @@ source ~/.zsh_aliases
 
 # other options
 #
-unsetopt share_history
 
 # custom options
 if [[ -r ~/.zsh_custom ]]; then

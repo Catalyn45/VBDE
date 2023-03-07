@@ -9,9 +9,12 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'bfrg/vim-cpp-modern'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " Plug 'github/copilot.vim'
 call plug#end()
@@ -26,7 +29,7 @@ end
 EOF
 
 
-let g:ctrlp_custom_ignore = 'node_modules\|tags\|DS_Store\|git\|\.o\|\.d'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|\.o\|\.d\|\.venv\|venv\|__pycache__'
 let g:ctrlp_working_path_mode = ''
 
 if (has("termguicolors"))
@@ -37,7 +40,19 @@ lua require'colorizer'.setup()
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_gruvbox_dark_hard'
+"
+" Disable function highlighting (affects both C and C++ files)
+let g:cpp_function_highlight = 1
 
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 1
 " set signcolumn=no
 
 let g:ale_linters = {'python': ['flake8']}
@@ -81,6 +96,7 @@ set expandtab
 set list
 set cursorline
 set autoindent
+set autoread
 
 colorscheme gruvbox
 
@@ -151,6 +167,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 set cscopetag
 set nowrap
+set nofoldenable
 
 map g<C-]> :cs find 3 <C-R>=expand("<cword>")<CR><CR>
 map g<C-\> :cs find 0 <C-R>=expand("<cword>")<CR><CR>
