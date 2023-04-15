@@ -29,7 +29,13 @@ git clone https://github.com/github/copilot.vim.git && \
 git clone https://github.com/norcalli/nvim-colorizer.lua.git && \
 git clone https://github.com/windwp/nvim-autopairs.git'
 
-replace_config ~/.config/nvim init.vim
+replace_config ~/.config/nvim init.lua
+
+mkdir -p ~/.config/nvim/lua
+
+replace_config ~/.config/nvim/lua plugins.lua
+replace_config ~/.config/nvim/lua shortcuts.lua
+replace_config ~/.config/nvim/lua utils.lua
 
 nvim -c "PlugInstall | qall" 2> /dev/null
 
