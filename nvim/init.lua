@@ -24,7 +24,7 @@ o.cscopetag = true
 o.wrap = false
 o.foldenable = false
 
-o.undodir = '~/.undovim'
+o.undodir = fn.getenv("HOME") .. '/.undovim'
 o.undofile = true
 o.fsync = true
 
