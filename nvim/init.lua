@@ -22,6 +22,8 @@ o.cursorline = true
 o.autoindent = true
 o.autoread = true
 
+o.pumheight = 6
+
 o.scrolloff = 8
 
 o.hlsearch = false
