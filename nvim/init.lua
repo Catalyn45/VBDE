@@ -30,7 +30,6 @@ o.hlsearch = false
 o.incsearch = true
 
 o.updatetime = 50
-o.colorcolumn = "80"
 
 o.clipboard = 'unnamedplus'
 o.wrap = false
@@ -53,3 +52,27 @@ g.airline_theme = 'base16_gruvbox_dark_hard'
 
 g.NERDTreeWinPos = 'left'
 g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', 'GTAGS', 'GRTAGS', 'GPATH' }
+
+
+local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
+
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
+   pattern = "*",
+   group = augroup,
+   callback = function()
+      if vim.o.nu and vim.api.nvim_get_mode().mode ~= "i" then
+         vim.opt.relativenumber = true
+      end
+   end,
+})
+
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEnter", "WinLeave" }, {
+   pattern = "*",
+   group = augroup,
+   callback = function()
+      if vim.o.nu then
+         vim.opt.relativenumber = false
+         vim.cmd "redraw"
+      end
+   end,
+})
