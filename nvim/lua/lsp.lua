@@ -42,11 +42,7 @@ lsp.setup_nvim_cmp({
 })
 
 local on_attach = function(_, _)
-    u.nnoremap('<F2>', vim.lsp.buf.rename)
-
-    u.nnoremap('K', vim.lsp.buf.hover)
-    u.nnoremap('<C-]>', vim.lsp.buf.declaration)
-    u.nnoremap('<C-[>', vim.lsp.buf.definition)
+      lsp.default_keymaps({buffer = bufnr})
 end
 
 lsp.on_attach(on_attach)

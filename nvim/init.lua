@@ -2,6 +2,8 @@ o = vim.o
 g = vim.g
 fn = vim.fn
 
+g.mapleader = " "
+
 if fn.has('termguicolors') then
     o.termguicolors = true
 end
@@ -38,6 +40,7 @@ o.foldenable = false
 o.undodir = fn.getenv("HOME") .. '/.undovim'
 o.undofile = true
 o.fsync = true
+
 
 vim.wo.number = true
 vim.wo.relativenumber = true
