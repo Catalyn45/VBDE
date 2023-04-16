@@ -8,7 +8,11 @@ end
 
 require('plugins')
 
+require('lsp')
+
 require('shortcuts')
+
+require('parser')
 
 o.tabstop = 4
 o.shiftwidth = 4
@@ -18,9 +22,15 @@ o.cursorline = true
 o.autoindent = true
 o.autoread = true
 
+o.scrolloff = 8
+
 o.hlsearch = false
+o.incsearch = true
+
+o.updatetime = 50
+o.colorcolumn = "80"
+
 o.clipboard = 'unnamedplus'
-o.cscopetag = true
 o.wrap = false
 o.foldenable = false
 
@@ -32,23 +42,6 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 vim.cmd('colorscheme gruvbox')
-
--- TODO: find a replacement for this crap
-if fn.has('cscope') then
-  o.csprg = '/bin/cscope'
-  o.csto = 0
-  o.cst = true
-
-  if fn.filereadable('/usr/include/cscope.out') == 1 then
-    vim.cmd('silent cs add /usr/include/cscope.out')
-  end
-
-  if fn.filereadable('cscope.out') == 1 then
-    vim.cmd('silent cs add cscope.out')
-  elseif vim.env.CSCOPE_DB then
-    vim.cmd('silent cs add ' .. vim.env.CSCOPE_DB)
-  end
-end
 
 g.ctrlp_custom_ignore = 'node_modules\\|DS_Store\\|git\\|\\.o\\|\\.d\\|\\.venv\\|venv\\|__pycache__'
 g.ctrlp_working_path_mode = ''
