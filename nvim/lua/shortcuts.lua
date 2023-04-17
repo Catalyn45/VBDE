@@ -14,7 +14,7 @@ local telescope_mappings = {
 require("telescope").setup {
     pickers = {
         find_files = {
-            file_ignore_patterns = { "node_modules", ".pyc$", ".d$", ".exe$", ".so$", ".a$", ".o$", ".lib$", "__pycache__" },
+            file_ignore_patterns = { "node_modules", ".pyc$", ".d$", ".exe$", ".so$", ".a$", ".o$", ".lib$", "__pycache__", ".cache" },
             mappings = telescope_mappings
         },
         live_grep = {

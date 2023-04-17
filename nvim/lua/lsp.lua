@@ -3,12 +3,10 @@ u = require('utils')
 local lsp = require('lsp-zero')
 lsp.preset({})
 
-lsp.automatic_installation = true;
-
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
-local cmp_mapping = lsp.defaults.cmp_mappings({
+local cmp_mapping = {
     ['<C-j>'] = cmp.mapping.select_next_item(),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -33,9 +31,9 @@ local cmp_mapping = lsp.defaults.cmp_mappings({
         fallback()
       end
     end, { "i", "s" }),
-})
+}
 
-lsp.setup_nvim_cmp({
+cmp.setup({
     mapping = cmp_mapping,
     experimental = {
         native_menu = false,
@@ -43,7 +41,11 @@ lsp.setup_nvim_cmp({
     }
 })
 
-local on_attach = function(_, _)
+require('mason-lspconfig').setup({
+    automatic_installation = true
+})
+
+local on_attach = function(_, bufnr)
       lsp.default_keymaps({buffer = bufnr})
 end
 
