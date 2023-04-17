@@ -3,7 +3,6 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
@@ -23,6 +22,10 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'L3MON4D3/LuaSnip'
 
 Plug "VonHeikemen/lsp-zero.nvim"
+Plug "BurntSushi/ripgrep"
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 vim.call('plug#end')
 

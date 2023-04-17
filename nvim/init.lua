@@ -2,7 +2,7 @@ o = vim.o
 g = vim.g
 fn = vim.fn
 
-g.mapleader = " "
+g.mapleader = ""
 
 o.termguicolors = true
 
@@ -43,9 +43,6 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 vim.cmd('colorscheme gruvbox')
-
-g.ctrlp_working_path_mode = 1
-g.ctrlp_custom_ignore = 'node_modules\\|DS_Store\\|git\\|\\.o\\|\\.d\\|\\.venv\\|venv\\|__pycache__\\|\\.exe'
 
 g.airline_powerline_fonts = 1
 g.airline_theme = 'base16_gruvbox_dark_hard'

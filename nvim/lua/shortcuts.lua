@@ -1,16 +1,38 @@
 local u = require('utils')
 
+local builtin = require('telescope.builtin')
+local actions = require('telescope.actions')
+
+local telescope_mappings = {
+    i = {
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<Esc>"] = actions.close
+    }
+}
+
+require("telescope").setup {
+    pickers = {
+        find_files = {
+            file_ignore_patterns = { "node_modules", ".pyc$", ".d$", ".exe$", ".so$", ".a$", ".o$", ".lib$", "__pycache__" },
+            mappings = telescope_mappings
+        },
+        live_grep = {
+            mappings = telescope_mappings
+        }
+    }
+}
+
 u.vnoremap('J', ":m '>+1<CR>gv=gv")
 u.vnoremap('K', ":m '<-2<CR>gv=gv")
 
-u.nnoremap('<leader>p', '<Plug>(GitGutterPreviewHunk)')
-u.nnoremap('<leader>u', '<Plug>(GitGutterUndoHunk)')
-u.nnoremap('<leader>s', '<Plug>(GitGutterStageHunk)')
+u.nnoremap('<space>j', '<C-w>j')
+u.nnoremap('<space>k', '<C-w>k')
+u.nnoremap('<space>h', '<C-w>h')
+u.nnoremap('<space>l', '<C-w>l')
 
-u.nnoremap('<leader>j', '<C-w>j')
-u.nnoremap('<leader>k', '<C-w>k')
-u.nnoremap('<leader>h', '<C-w>h')
-u.nnoremap('<leader>l', '<C-w>l')
+u.noremap('<C-p>', builtin.find_files)
+u.noremap('gf',    builtin.live_grep)
 
 u.noremap('<C-n>', ':NERDTreeToggle<CR>')
 
@@ -38,6 +60,9 @@ u.nnoremap(']Q', ':clast<CR>')
 u.nnoremap('<C-b>', ':buffers<CR>')
 
 u.nnoremap('S', ':%s//gc<Left><Left><Left>', false)
+
+u.inoremap('<C-j>', '<Down>')
+u.inoremap('<C-k>', '<Up>')
 
 u.noremap('<Up>',    '<Nop>')
 u.noremap('<Down>',  '<Nop>')
