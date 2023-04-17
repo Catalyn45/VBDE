@@ -3,6 +3,8 @@ u = require('utils')
 local lsp = require('lsp-zero')
 lsp.preset({})
 
+lsp.automatic_installation = true;
+
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
@@ -47,7 +49,7 @@ end
 
 lsp.on_attach(on_attach)
 
-lsp.setup_servers({'clangd', 'pyright', 'lua_ls'})
+lsp.setup_servers({'clangd', 'pyright', 'lua_ls', 'tsserver'})
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 

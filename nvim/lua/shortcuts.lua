@@ -24,6 +24,7 @@ u.nnoremap('<A-o>', ':A<CR>')
 
 u.nnoremap('<A-]>', ':bnext<CR>')
 u.nnoremap('<A-[>', ':bprev<CR>')
+u.nnoremap('<A-x>', ':bdel<CR>')
 
 u.inoremap('<A-]>', '<C-\\><C-N>:bnext<CR>')
 u.inoremap('<A-[>', '<C-\\><C-N>:bprev<CR>')
@@ -33,9 +34,6 @@ u.nnoremap(']q', ':cnext<CR>')
 
 u.nnoremap('[Q', ':cfirst<CR>')
 u.nnoremap(']Q', ':clast<CR>')
-
-u.nnoremap('gb', ':bn<CR>')
-u.nnoremap('gB', ':bp<CR>')
 
 u.nnoremap('<C-b>', ':buffers<CR>')
 

@@ -47,11 +47,18 @@ vim.wo.relativenumber = true
 
 vim.cmd('colorscheme gruvbox')
 
+g.ctrlp_working_path_mode = 0
 g.ctrlp_custom_ignore = 'node_modules\\|DS_Store\\|git\\|\\.o\\|\\.d\\|\\.venv\\|venv\\|__pycache__'
-g.ctrlp_working_path_mode = ''
 
 g.airline_powerline_fonts = 1
 g.airline_theme = 'base16_gruvbox_dark_hard'
+g.airline_extensions_tabline_enabled = 1
+g.airline_extensions_tabline_formatter = 'unique_tail_improved'
+
+g.airline_extensions = {'branch', 'tabline'}
+
+g.airline_section_y = '%{bufnr("%")}'
+g.airline_section_z = '%{strftime("%c")}'
 
 g.NERDTreeWinPos = 'left'
 g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', 'GTAGS', 'GRTAGS', 'GPATH' }
