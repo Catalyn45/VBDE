@@ -4,9 +4,7 @@ fn = vim.fn
 
 g.mapleader = " "
 
-if fn.has('termguicolors') then
-    o.termguicolors = true
-end
+o.termguicolors = true
 
 require('plugins')
 
@@ -31,8 +29,6 @@ o.scrolloff = 8
 o.hlsearch = false
 o.incsearch = true
 
-o.updatetime = 50
-
 o.clipboard = 'unnamedplus'
 o.wrap = false
 o.foldenable = false
@@ -41,14 +37,15 @@ o.undodir = fn.getenv("HOME") .. '/.undovim'
 o.undofile = true
 o.fsync = true
 
+o.updatetime = 50
 
 vim.wo.number = true
 vim.wo.relativenumber = true
 
 vim.cmd('colorscheme gruvbox')
 
-g.ctrlp_working_path_mode = 0
-g.ctrlp_custom_ignore = 'node_modules\\|DS_Store\\|git\\|\\.o\\|\\.d\\|\\.venv\\|venv\\|__pycache__'
+g.ctrlp_working_path_mode = 1
+g.ctrlp_custom_ignore = 'node_modules\\|DS_Store\\|git\\|\\.o\\|\\.d\\|\\.venv\\|venv\\|__pycache__\\|\\.exe'
 
 g.airline_powerline_fonts = 1
 g.airline_theme = 'base16_gruvbox_dark_hard'

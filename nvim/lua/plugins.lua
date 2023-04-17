@@ -2,7 +2,6 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 Plug 'preservim/nerdtree'
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'rhysd/vim-clang-format'
@@ -12,8 +11,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-man'
 Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
-
-Plug 'L3MON4D3/LuaSnip'
 
 Plug 'nvim-treesitter/nvim-treesitter'
 
