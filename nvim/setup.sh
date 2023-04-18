@@ -20,6 +20,7 @@ replace_config ~/.config/nvim/lua shortcuts.lua
 replace_config ~/.config/nvim/lua utils.lua
 replace_config ~/.config/nvim/lua lsp.lua
 replace_config ~/.config/nvim/lua parser.lua
+replace_config ~/.config/nvim/lua debugger.lua
 
 nvim -c "PlugInstall | qall" 2> /dev/null
 

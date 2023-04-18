@@ -7,12 +7,10 @@ g.mapleader = ""
 o.termguicolors = true
 
 require('plugins')
-
 require('lsp')
-
 require('shortcuts')
-
 require('parser')
+require('debugging')
 
 o.tabstop = 4
 o.shiftwidth = 4

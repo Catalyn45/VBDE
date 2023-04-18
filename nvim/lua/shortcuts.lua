@@ -14,7 +14,8 @@ local telescope_mappings = {
 require("telescope").setup {
     pickers = {
         find_files = {
-            file_ignore_patterns = { "node_modules", ".pyc$", ".d$", ".exe$", ".so$", ".a$", ".o$", ".lib$", "__pycache__", ".cache" },
+            file_ignore_patterns = { "node_modules", ".pyc$", ".d$", ".exe$", ".so$", ".a$", ".o$", ".lib$",
+                "__pycache__", ".cache" },
             mappings = telescope_mappings
         },
         live_grep = {
@@ -22,6 +23,20 @@ require("telescope").setup {
         }
     }
 }
+
+local dap = require('dap')
+
+u.nnoremap('<F5>', dap.continue)
+u.nnoremap('<F6>', dap.terminate)
+u.nnoremap('<F10>', dap.step_over)
+u.nnoremap('<F11>', dap.step_into)
+u.nnoremap('<F12>', dap.step_out)
+u.nnoremap('<space>b', dap.toggle_breakpoint)
+u.nnoremap('<space>r', dap.restart)
+
+local dapui = require('dapui')
+
+u.nnoremap('<F4>', dapui.toggle)
 
 u.vnoremap('J', ":m '>+1<CR>gv=gv")
 u.vnoremap('K', ":m '<-2<CR>gv=gv")
@@ -31,8 +46,11 @@ u.nnoremap('<space>k', '<C-w>k')
 u.nnoremap('<space>h', '<C-w>h')
 u.nnoremap('<space>l', '<C-w>l')
 
+u.noremap('gp', ":diffput<CR>")
+u.noremap('go', ":diffget<CR>")
+
 u.noremap('<C-p>', builtin.find_files)
-u.noremap('gf',    builtin.live_grep)
+u.noremap('gf', builtin.live_grep)
 
 u.noremap('<C-n>', ':NERDTreeToggle<CR>')
 
@@ -64,13 +82,12 @@ u.nnoremap('S', ':%s//gc<Left><Left><Left>', false)
 u.inoremap('<C-j>', '<Down>')
 u.inoremap('<C-k>', '<Up>')
 
-u.noremap('<Up>',    '<Nop>')
-u.noremap('<Down>',  '<Nop>')
-u.noremap('<Left>',  '<Nop>')
+u.noremap('<Up>', '<Nop>')
+u.noremap('<Down>', '<Nop>')
+u.noremap('<Left>', '<Nop>')
 u.noremap('<Right>', '<Nop>')
 
-u.inoremap('<Up>',   '<Nop>')
+u.inoremap('<Up>', '<Nop>')
 u.inoremap('<Down>', '<Nop>')
 u.inoremap('<Left>', '<Nop>')
-u.inoremap('<Right>','<Nop>')
-
+u.inoremap('<Right>', '<Nop>')

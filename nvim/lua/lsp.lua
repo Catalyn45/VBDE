@@ -46,6 +46,7 @@ require('mason-lspconfig').setup({
 })
 
 local on_attach = function(_, bufnr)
+      vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
       lsp.default_keymaps({buffer = bufnr})
 end
 
