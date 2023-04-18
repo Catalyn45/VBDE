@@ -19,6 +19,7 @@ o.list = true
 o.cursorline = true
 o.autoindent = true
 o.autoread = true
+o.laststatus = 3
 
 o.pumheight = 6
 
