@@ -2,6 +2,7 @@ local u = require('utils')
 
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
+local t_utils = require('telescope.utils')
 
 local telescope_mappings = {
     i = {
@@ -12,14 +13,14 @@ local telescope_mappings = {
 }
 
 require("telescope").setup {
+    defaults = {
+        mappings = telescope_mappings
+    },
     pickers = {
         find_files = {
-            file_ignore_patterns = { "node_modules", ".pyc$", ".d$", ".exe$", ".so$", ".a$", ".o$", ".lib$",
-                "__pycache__", ".cache" },
-            mappings = telescope_mappings
-        },
-        live_grep = {
-            mappings = telescope_mappings
+            file_ignore_patterns = { "node_modules", "\\.pyc$", "\\.d$", "\\.exe$", "\\.so$", "\\.a$", "\\.o$", "\\.lib$", "__pycache__", "\\.cache" },
+            cwd = t_utils.buffer_dir(),
+            follow = true
         }
     }
 }
@@ -50,7 +51,8 @@ u.noremap('gp', ":diffput<CR>")
 u.noremap('go', ":diffget<CR>")
 
 u.noremap('<C-p>', builtin.find_files)
-u.noremap('gf', builtin.live_grep)
+u.noremap('<C-S-p>', builtin.resume)
+u.noremap('<C-f>', builtin.live_grep)
 
 u.noremap('<C-n>', ':NERDTreeToggle<CR>')
 
