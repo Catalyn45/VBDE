@@ -59,6 +59,11 @@ g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', 'GTAGS', 'GRTAGS', 'GPAT
 
 local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
 
+
+-- set make to running the current file if the file is python
+vim.api.nvim_command([[au filetype python setlocal mp=python\ %]])
+
+
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
    pattern = "*",
    group = augroup,
