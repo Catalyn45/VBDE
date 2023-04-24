@@ -88,6 +88,8 @@ u.inoremap('<C-k>', '<Up>')
 u.nnoremap('<space>e', ":%!xxd<CR>")
 u.nnoremap('<space>w', ":%!xxd -r<CR>")
 
+u.nnoremap('<space>m', ":make<CR>")
+
 u.noremap('<Up>', '<Nop>')
 u.noremap('<Down>', '<Nop>')
 u.noremap('<Left>', '<Nop>')
