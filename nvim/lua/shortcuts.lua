@@ -14,7 +14,7 @@ local telescope_mappings = {
 
 require("telescope").setup {
     defaults = {
-        mappings = telescope_mappings
+        mappings = telescope_mappings,
     },
     pickers = {
         find_files = {
@@ -50,8 +50,9 @@ u.nnoremap('<space>l', '<C-w>l')
 u.noremap('gp', ":diffput<CR>")
 u.noremap('go', ":diffget<CR>")
 
+
 u.noremap('<C-p>', builtin.find_files)
-u.noremap('<C-S-p>', builtin.resume)
+u.noremap('<C-k>', builtin.resume)
 u.noremap('<C-f>', builtin.live_grep)
 
 u.noremap('<C-n>', ':NERDTreeToggle<CR>')
