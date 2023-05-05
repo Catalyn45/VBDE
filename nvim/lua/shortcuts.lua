@@ -59,6 +59,7 @@ u.noremap('<C-n>', ':NERDTreeToggle<CR>')
 
 u.nnoremap('<C-d>', '<C-d>zz')
 u.nnoremap('<C-u>', '<C-u>zz')
+u.nnoremap('zZ', 'zszH')
 
 u.nnoremap('n', 'nzzzv')
 u.nnoremap('N', 'Nzzzv')

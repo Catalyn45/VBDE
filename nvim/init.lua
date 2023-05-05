@@ -54,7 +54,7 @@ g.airline_section_y = '%{bufnr("%")}'
 g.airline_section_z = '%{strftime("%c")}'
 
 g.NERDTreeWinPos = 'left'
-g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', 'GTAGS', 'GRTAGS', 'GPATH' }
+g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', '__pycache__', 'GTAGS', 'GRTAGS', 'GPATH' }
 
 
 local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
@@ -62,7 +62,6 @@ local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
 
 -- set make to running the current file if the file is python
 vim.api.nvim_command([[au filetype python setlocal mp=python\ %]])
-
 
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
    pattern = "*",

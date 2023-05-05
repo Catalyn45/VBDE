@@ -22,6 +22,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 -- lsp
 Plug 'neovim/nvim-lspconfig'
