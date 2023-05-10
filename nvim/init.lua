@@ -12,6 +12,15 @@ require('shortcuts')
 require('parser')
 require('debugging')
 
+o.foldenable = false
+o.foldmethod = "expr"
+o.foldexpr="nvim_treesitter#foldexpr()"
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*" },
+    command = "normal zx zR",
+})
+
 o.tabstop = 4
 o.shiftwidth = 4
 o.expandtab = true
@@ -20,6 +29,7 @@ o.cursorline = true
 o.autoindent = true
 o.autoread = true
 o.laststatus = 3
+
 
 o.pumheight = 6
 
@@ -30,7 +40,6 @@ o.incsearch = true
 
 o.clipboard = 'unnamedplus'
 o.wrap = false
-o.foldenable = false
 
 o.undodir = fn.getenv("HOME") .. '/.undovim'
 o.undofile = true

@@ -3,6 +3,8 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 Plug 'preservim/nerdtree'
 
+Plug 'github/copilot.vim'
+
 -- git commands
 Plug 'tpope/vim-fugitive'
 

@@ -35,6 +35,22 @@ u.nnoremap('<F12>', dap.step_out)
 u.nnoremap('<space>b', dap.toggle_breakpoint)
 u.nnoremap('<space>r', dap.restart)
 
+vim.g.copilot_enabled = false
+local copilot_toggle = function ()
+    if vim.g.copilot_enabled  then
+        vim.cmd('Copilot disable')
+        print("Copilot OFF")
+        vim.g.copilot_enabled = false
+        return
+    end
+
+    vim.cmd('Copilot enable')
+    print("Copilot ON")
+    vim.g.copilot_enabled = true
+end
+
+u.nnoremap('<space>p', copilot_toggle)
+
 local dapui = require('dapui')
 
 u.nnoremap('<F4>', dapui.toggle)
