@@ -30,10 +30,13 @@ local dap = require('dap')
 u.nnoremap('<F5>', dap.continue)
 u.nnoremap('<F6>', dap.terminate)
 u.nnoremap('<F10>', dap.step_over)
-u.nnoremap('<F11>', dap.step_into)
 u.nnoremap('<F12>', dap.step_out)
+u.nnoremap('<F11>', dap.step_into)
 u.nnoremap('<space>b', dap.toggle_breakpoint)
 u.nnoremap('<space>r', dap.restart)
+
+u.nnoremap('gc', ":Commentary<CR>")
+u.vnoremap('gc', ":Commentary<CR>")
 
 vim.g.copilot_enabled = false
 local copilot_toggle = function ()

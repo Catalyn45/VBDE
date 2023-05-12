@@ -8,6 +8,8 @@ Plug 'github/copilot.vim'
 -- git commands
 Plug 'tpope/vim-fugitive'
 
+Plug 'tpope/vim-commentary'
+
 Plug 'rhysd/vim-clang-format'
 
 Plug 'morhetz/gruvbox'
