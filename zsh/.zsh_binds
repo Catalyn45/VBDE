@@ -9,6 +9,8 @@ bindkey '^j' down-line-or-search
 
 bindkey '^m' accept-line
 
+bindkey '^e' edit-command-line
+
 if which "ranger" &> /dev/null; then
     bindkey -s '^o' 'ranger^m'
 fi
