@@ -33,6 +33,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug "williamboman/mason.nvim"
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug "VonHeikemen/lsp-zero.nvim"
+Plug "simrat39/rust-tools.nvim"
+Plug 'mg979/vim-visual-multi'
 
 -- autocompletion
 Plug 'hrsh7th/nvim-cmp'
@@ -57,5 +59,4 @@ vim.call('plug#end')
 vim.cmd('source ~/.config/nvim/plugged/switcher/a.vim')
 
 require("nvim-autopairs").setup()
-
 require("colorizer").setup()

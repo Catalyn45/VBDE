@@ -71,7 +71,7 @@ u.noremap('go', ":diffget<CR>")
 
 
 u.noremap('<C-p>', builtin.find_files)
-u.noremap('<C-k>', builtin.resume)
+u.noremap('<space-k>', builtin.resume)
 u.noremap('<C-f>', builtin.live_grep)
 
 u.noremap('<C-n>', ':NERDTreeToggle<CR>')
@@ -105,19 +105,21 @@ u.nnoremap('S', ':%s//gc<Left><Left><Left>', false)
 u.inoremap('<C-j>', '<Down>')
 u.inoremap('<C-k>', '<Up>')
 
-
 u.nnoremap('<space>e', ":%!xxd<CR>")
 u.nnoremap('<space>w', ":%!xxd -r<CR>")
 
 u.nnoremap('<space>m', ":make<CR>")
 
-u.noremap('<Up>', '<Nop>')
-u.noremap('<Down>', '<Nop>')
-u.noremap('<Left>', '<Nop>')
-u.noremap('<Right>', '<Nop>')
+u.noremap('<Up>', ':resize -5<CR>')
+u.noremap('<Down>', ':resize +5<CR>')
+u.noremap('<Left>', ':vertical resize -5<CR>')
+u.noremap('<Right>', ':vertical resize +5<CR>')
 
 u.inoremap('<Up>', '<Nop>')
 u.inoremap('<Down>', '<Nop>')
 u.inoremap('<Left>', '<Nop>')
 u.inoremap('<Right>', '<Nop>')
+
+u.nnoremap('<C-j>', '<Plug>(VM-Add-Cursor-Down)')
+u.nnoremap('<C-k>', '<Plug>(VM-Add-Cursor-Up)')
 
