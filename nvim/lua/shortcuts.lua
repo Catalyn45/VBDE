@@ -95,12 +95,8 @@ u.inoremap('<A-[>', '<C-\\><C-N>:bprev<CR>')
 u.nnoremap('[q', ':cprev<CR>')
 u.nnoremap(']q', ':cnext<CR>')
 
-u.nnoremap('[Q', ':cfirst<CR>')
-u.nnoremap(']Q', ':clast<CR>')
-
-u.nnoremap('<C-b>', ':buffers<CR>')
-
 u.nnoremap('S', ':%s//gc<Left><Left><Left>', false)
+u.vnoremap('S', ':s//gc<Left><Left><Left>', false)
 
 u.inoremap('<C-j>', '<Down>')
 u.inoremap('<C-k>', '<Up>')

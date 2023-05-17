@@ -70,10 +70,22 @@ local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
 
 
 -- set make to running the current file if the file is python
-vim.api.nvim_command([[au filetype python setlocal mp=python\ %]])
+vim.api.nvim_create_autocmd({'FileType'}, {
+    pattern = "python",
+    callback = function ()
+        vim.opt_local.mp = 'python %'
+        vim.cmd('compiler pyunit')
+    end
+})
 
 -- set make to cargo run if rust
-vim.api.nvim_command([[au filetype rust setlocal mp=cargo\ run]])
+vim.api.nvim_create_autocmd({'FileType'}, {
+    pattern = "rust",
+    callback = function ()
+        vim.opt_local.mp="cargo\\ run"
+        vim.cmd('compiler rustc')
+    end
+})
 
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
    pattern = "*",

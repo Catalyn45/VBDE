@@ -45,7 +45,7 @@ require('mason-lspconfig').setup({
     automatic_installation = true
 })
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
     lsp.default_keymaps({buffer = bufnr})
 end
@@ -56,6 +56,8 @@ lsp.setup_servers({'clangd', 'pyright', 'lua_ls', 'tsserver'})
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+lsp.setup()
+
 local rt = require("rust-tools")
 rt.setup({
   server = {
@@ -63,4 +65,3 @@ rt.setup({
   }
 })
 
-lsp.setup()
