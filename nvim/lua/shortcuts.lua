@@ -21,6 +21,9 @@ require("telescope").setup {
             file_ignore_patterns = { "node_modules", "\\.pyc$", "\\.d$", "\\.exe$", "\\.so$", "\\.a$", "\\.o$", "\\.lib$", "__pycache__", "\\.cache" },
             cwd = t_utils.buffer_dir(),
             follow = true
+        },
+        live_grep = {
+            cwd = t_utils.buffer_dir()
         }
     }
 }
