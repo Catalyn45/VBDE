@@ -62,6 +62,7 @@ g.airline_extensions = {'branch', 'tabline'}
 g.airline_section_y = '%{bufnr("%")}'
 g.airline_section_z = '%{strftime("%c")}'
 
+
 g.NERDTreeWinPos = 'left'
 g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', '__pycache__', 'GTAGS', 'GRTAGS', 'GPATH' }
 

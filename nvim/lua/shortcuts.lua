@@ -77,7 +77,7 @@ u.noremap('<C-p>', builtin.find_files)
 u.noremap('<space-k>', builtin.resume)
 u.noremap('<C-f>', builtin.live_grep)
 
-u.noremap('<C-n>', ':NERDTreeToggle<CR>')
+u.noremap('<A-e>', ':NERDTreeToggle<CR>')
 
 u.nnoremap('<C-d>', '<C-d>zz')
 u.nnoremap('<C-u>', '<C-u>zz')
