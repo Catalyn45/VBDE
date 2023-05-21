@@ -20,8 +20,17 @@ dap.configurations.cpp = {
 
 dap.configurations.c = dap.configurations.cpp
 
+dap.configurations.rust = {
+    {
+      name = "Launch",
+      type = "rust",
+      request = "launch",
+      cwd = '${workspaceFolder}',
+    }
+}
+
 require('dap-python').setup()
-table.insert(require('dap').configurations.python, {
+table.insert(dap.configurations.python, {
   type = 'python',
   request = 'launch',
   name = 'My custom launch configuration',

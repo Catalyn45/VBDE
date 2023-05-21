@@ -66,7 +66,6 @@ g.airline_section_z = '%{strftime("%c")}'
 g.NERDTreeWinPos = 'left'
 g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', '__pycache__', 'GTAGS', 'GRTAGS', 'GPATH' }
 
-
 local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
 
 
@@ -74,8 +73,8 @@ local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
 vim.api.nvim_create_autocmd({'FileType'}, {
     pattern = "python",
     callback = function ()
-        vim.opt_local.mp = 'python %'
         vim.cmd('compiler pyunit')
+        vim.opt_local.mp = 'python %'
     end
 })
 
@@ -83,8 +82,8 @@ vim.api.nvim_create_autocmd({'FileType'}, {
 vim.api.nvim_create_autocmd({'FileType'}, {
     pattern = "rust",
     callback = function ()
-        vim.opt_local.mp="cargo\\ run"
         vim.cmd('compiler rustc')
+        vim.opt_local.mp="cargo run"
     end
 })
 

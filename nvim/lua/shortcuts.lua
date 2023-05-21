@@ -38,9 +38,6 @@ u.nnoremap('<F11>', dap.step_into)
 u.nnoremap('<space>b', dap.toggle_breakpoint)
 u.nnoremap('<space>r', dap.restart)
 
-u.nnoremap('gc', ":Commentary<CR>")
-u.vnoremap('gc', ":Commentary<CR>")
-
 vim.g.copilot_enabled = false
 local copilot_toggle = function ()
     if vim.g.copilot_enabled  then
@@ -74,7 +71,7 @@ u.noremap('go', ":diffget<CR>")
 
 
 u.noremap('<C-p>', builtin.find_files)
-u.noremap('<space-k>', builtin.resume)
+u.noremap('<space>k', builtin.resume)
 u.noremap('<C-f>', builtin.live_grep)
 
 u.noremap('<A-e>', ':NERDTreeToggle<CR>')

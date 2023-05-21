@@ -3,12 +3,13 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin')
 Plug 'preservim/nerdtree'
 
-Plug 'github/copilot.vim'
+-- Plug 'github/copilot.vim'
 
 -- git commands
 Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-commentary'
+Plug 'numToStr/Comment.nvim'
 
 Plug 'rhysd/vim-clang-format'
 
@@ -60,3 +61,4 @@ vim.cmd('source ~/.config/nvim/plugged/switcher/a.vim')
 
 require("nvim-autopairs").setup()
 require("colorizer").setup()
+require('Comment').setup()
