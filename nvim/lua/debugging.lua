@@ -11,10 +11,11 @@ dap.adapters.cpp = {
 
 dap.configurations.cpp = {
     {
-      name = "Launch",
-      type = "cpp",
-      request = "launch",
-      cwd = '${workspaceFolder}',
+        name = "Launch",
+        type = "cpp",
+        request = "launch",
+        cwd = '${workspaceFolder}',
+        program = './a.out',
     }
 }
 
@@ -38,22 +39,6 @@ table.insert(dap.configurations.python, {
   name = 'My custom launch configuration',
   program = '${file}',
 })
-
-local config_paths = {"./.nvim-dap/nvim-dap.lua", "./.nvim-dap.lua", "./.nvim/nvim-dap.lua"}
-
-local project_config = ""
-for _, p in ipairs(config_paths) do
-    local f = io.open(p)
-    if f ~= nil then
-        f:close()
-        project_config = p
-        break
-    end
-end
-
-if project_config ~= "" then
-    vim.cmd(":luafile " .. project_config)
-end
 
 local dapui = require('dapui')
 

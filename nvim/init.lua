@@ -68,7 +68,6 @@ g.NERDTreeIgnore = { '\\.o$', '\\.d$', '\\.so', '\\.a', '__pycache__', 'GTAGS', 
 
 local augroup = vim.api.nvim_create_augroup("numbertoggle", {})
 
-
 -- set make to running the current file if the file is python
 vim.api.nvim_create_autocmd({'FileType'}, {
     pattern = "python",
@@ -116,3 +115,12 @@ end,{})
 vim.api.nvim_create_user_command('G',function()
     vim.cmd('tab Git')
 end,{})
+
+-- custom user config
+local user_config_file = vim.fn.getcwd() .. '/.nvim.lua'
+local f = io.open(user_config_file)
+if f ~= nil then
+    f:close()
+    vim.cmd(":luafile " .. user_config_file)
+end
+
