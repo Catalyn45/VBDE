@@ -40,6 +40,17 @@ local rt = require("rust-tools")
 rt.setup({
   server = {
     on_attach = on_attach
+  },
+  dap = {
+      adapter = {
+          name = "rt_lldb",
+          type = 'server',
+          port = "${port}",
+          executable = {
+              command = vim.env.HOME .. '/.vscode-server/extensions/vadimcn.vscode-lldb-1.9.1/adapter/codelldb',
+              args = {"--port", "${port}"},
+          }
+      }
   }
 })
 

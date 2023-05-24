@@ -22,10 +22,12 @@ dap.configurations.c = dap.configurations.cpp
 
 dap.configurations.rust = {
     {
-      name = "Launch",
-      type = "rust",
+      name = "Rust debug",
+      type = "rt_lldb",
       request = "launch",
+      program = './target/debug/${workspaceFolderBasename}',
       cwd = '${workspaceFolder}',
+      showDisassembly = "never"
     }
 }
 

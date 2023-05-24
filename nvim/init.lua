@@ -107,3 +107,12 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEn
       end
    end,
 })
+
+vim.api.nvim_create_user_command('Q',function()
+    vim.cmd('q')
+    vim.cmd('q')
+end,{})
+
+vim.api.nvim_create_user_command('G',function()
+    vim.cmd('tab Git')
+end,{})

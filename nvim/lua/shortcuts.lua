@@ -71,7 +71,7 @@ u.noremap('go', ":diffget<CR>")
 
 
 u.noremap('<C-p>', builtin.find_files)
-u.noremap('<space>k', builtin.resume)
+u.noremap('<space>l', builtin.resume)
 u.noremap('<C-f>', builtin.live_grep)
 
 u.noremap('<A-e>', ':NERDTreeToggle<CR>')
