@@ -8,10 +8,7 @@ Plug 'preservim/nerdtree'
 -- git commands
 Plug 'tpope/vim-fugitive'
 
-Plug 'tpope/vim-commentary'
 Plug 'numToStr/Comment.nvim'
-
-Plug 'rhysd/vim-clang-format'
 
 Plug 'morhetz/gruvbox'
 
@@ -41,7 +38,12 @@ Plug 'mg979/vim-visual-multi'
 -- autocompletion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+
 Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets'
 
 
 -- fuzzy finder

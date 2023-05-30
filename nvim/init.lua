@@ -86,6 +86,38 @@ vim.api.nvim_create_autocmd({'FileType'}, {
     end
 })
 
+-- set make to gcc if C and not makefile
+vim.api.nvim_create_autocmd({'FileType'}, {
+    pattern = "c",
+    callback = function ()
+        local makefile_path = vim.fn.getcwd() .. '/Makefile'
+        local f = io.open(makefile_path)
+        if f ~= nil then
+            f:close()
+            return
+        end
+
+        vim.cmd('compiler gcc')
+        vim.opt_local.mp="gcc % && ./a.out"
+    end
+})
+
+-- set make to gcc if CPP and not makefile
+vim.api.nvim_create_autocmd({'FileType'}, {
+    pattern = "cpp",
+    callback = function ()
+        local makefile_path = vim.fn.getcwd() .. '/Makefile'
+        local f = io.open(makefile_path)
+        if f ~= nil then
+            f:close()
+            return
+        end
+
+        vim.cmd('compiler gcc')
+        vim.opt_local.mp="gcc % -lstdc++ && ./a.out"
+    end
+})
+
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
    pattern = "*",
    group = augroup,

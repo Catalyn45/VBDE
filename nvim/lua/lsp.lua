@@ -1,7 +1,8 @@
-u = require('utils')
-
 local lsp = require('lsp-zero')
 lsp.preset({})
+
+local luasnip = require('luasnip')
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local cmp = require('cmp')
 
@@ -9,9 +10,29 @@ local cmp_mapping = {
     ['<C-j>'] = cmp.mapping.select_next_item(),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+        if luasnip.jumpable(1) then
+            luasnip.jump(1)
+        else
+            fallback()
+        end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+        if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+        else
+            fallback()
+        end
+    end, { 'i', 's' }),
 }
 
 cmp.setup({
+    sources = {
+        {name = 'path'},
+        {name = 'luasnip'},
+        {name = 'nvim_lsp'},
+        {name = 'buffer'},
+    },
     mapping = cmp_mapping,
     experimental = {
         native_menu = false,
