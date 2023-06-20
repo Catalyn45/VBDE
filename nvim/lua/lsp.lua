@@ -6,6 +6,11 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 local cmp = require('cmp')
 
+luasnip.config.set_config({
+  region_check_events = 'InsertEnter',
+  delete_check_events = 'InsertLeave'
+})
+
 local cmp_mapping = {
     ['<C-j>'] = cmp.mapping.select_next_item(),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
