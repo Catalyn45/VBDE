@@ -34,8 +34,8 @@ local cmp_mapping = {
 cmp.setup({
     sources = {
         {name = 'path'},
-        {name = 'luasnip'},
         {name = 'nvim_lsp'},
+        {name = 'luasnip'},
         {name = 'buffer'},
     },
     mapping = cmp_mapping,
